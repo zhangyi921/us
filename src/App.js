@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Menu, Segment, Transition } from 'semantic-ui-react'
 import Zoom from 'react-reveal/Zoom';
 
+// this is my couple app demo
+// packages used: sematic ui, react reaveal
 function Index() {
   return (
     <div>
