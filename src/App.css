@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #a0d2ff;
+  height: 2000px;
 }
 
 .App-logo {
@@ -30,4 +32,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+.top-menu-bar{
+  margin: 0px;
+}
+#menubar {
+  background-color: #a0d2ff;
+  width: 100%;
+  position: sticky;
+  top:0px;
 }
