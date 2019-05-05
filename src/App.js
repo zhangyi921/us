@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Menu, Segment, Transition, Visibility, Button } from 'semantic-ui-react'
+import { Menu, Segment, Transition, Visibility, Button, Grid, Icon } from 'semantic-ui-react'
 import Zoom from 'react-reveal/Zoom';
 
 // this is my couple app demo
@@ -44,23 +44,33 @@ function Users() {
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.state = { activeItem: 'home', visible: false };
+    this.state = { activeItem: 'home', visible: false, 
+      calculations: {
+      direction: 'none',
+      height: 0,
+      width: 0,
+      topPassed: false,
+      bottomPassed: false,
+      pixelsPassed: 0,
+      percentagePassed: 0,
+      topVisible: false,
+      bottomVisible: false,
+      fits: false,
+      passing: false,
+      onScreen: false,
+      offScreen: false,
+    }, };
     this.contextRef = React.createRef();
   }
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-  // listenToScroll = ()=>{
-  //   if (document.body.scrollTop > 660) {
-  //     this.setState({visible: true})
-  //   }
-  //   else{
-  //     this.setState({visible: false})
-
-  //   }
-  // }
-  // componentDidMount() {
-  //   window.addEventListener('scroll', this.listenToScroll)
-  // }
-  
+  handleUpdate = (e, { calculations }) => {
+    this.setState({ calculations }); 
+    var elem = document.getElementById("overview-hearts");
+    elem.style.left = (this.state.calculations.pixelsPassed*1.2).toString() + "px"; 
+    var elem = document.getElementById("overview-hearts2");
+    elem.style.left = (this.state.calculations.width-this.state.calculations.pixelsPassed*1.2).toString() + "px";
+    // console.log(this.state.calculations.pixelsPassed.toString(), "px")
+  }
   showMenuBar = ()=>{
     this.setState({visible: true})
   }
@@ -70,6 +80,7 @@ class App extends React.Component {
 
   render(){
     const { activeItem } = this.state;
+    const { calculations } = this.state;
     return (
       <div className="App">
         <Segment inverted style={{margin:0, background: "#a0d2ff", padding: 0}} className="top-menu-bar">
@@ -77,15 +88,36 @@ class App extends React.Component {
             size={this.state.visible ? "small": "huge"} fixed={this.state.visible ? 'top' : null}>
             <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} style={{background: "#a0d2ff"}} color={"pink"}/>
             <Menu.Item
-              name='messages'
-              active={activeItem === 'messages'}
+              name='Overview'
+              active={activeItem === 'Overview'}
               onClick={this.handleItemClick}
               style={{background: "#a0d2ff"}}
               color={"pink"}
             />
             <Menu.Item
-              name='friends'
-              active={activeItem === 'friends'}
+              name='Private'
+              active={activeItem === 'Private'}
+              onClick={this.handleItemClick}
+              style={{background: "#a0d2ff"}}
+              color={"pink"}
+            />
+            <Menu.Item
+              name='Public'
+              active={activeItem === 'Public'}
+              onClick={this.handleItemClick}
+              style={{background: "#a0d2ff"}}
+              color={"pink"}
+            />
+            <Menu.Item
+              name='Love Data'
+              active={activeItem === 'Love Data'}
+              onClick={this.handleItemClick}
+              style={{background: "#a0d2ff"}}
+              color={"pink"}
+            />
+            <Menu.Item
+              name='About This Demo'
+              active={activeItem === 'About This Demo'}
               onClick={this.handleItemClick}
               style={{background: "#a0d2ff"}}
               color={"pink"}
@@ -98,7 +130,7 @@ class App extends React.Component {
               color={"pink"}
               position='right'
             >
-              <Button as='a' inverted={!this.state.visible} color={this.state.visible ? "pink": "white"}>
+              <Button as='a' inverted={!this.state.visible} color={this.state.visible ? "pink": null}>
                 Log in
               </Button>
               <Button as='a' inverted={!this.state.visible} primary={this.state.visible} style={{ marginLeft: '0.5em' }}>
@@ -108,9 +140,23 @@ class App extends React.Component {
           </Menu>
         </Segment>
         
-        <Visibility context = {this.contextRef} onOnScreen={this.hideMenuBar} once={false}></Visibility>
+        <Visibility context = {this.contextRef} onOnScreen={this.hideMenuBar} once={false} onUpdate={this.handleUpdate}>
+          <div className="overview">
+          </div>
+          <div className="overview-content">
+            <h1>This is a love space between you and your lover</h1>
+            <h1>{calculations.pixelsPassed.toFixed()}px</h1>
+          </div>
+          <div className="overview-hearts" id="overview-hearts">
+            <Icon name="heart outline"/>
+          </div>
+          <div className="overview-hearts" id="overview-hearts2">
+            <Icon name="heart outline"/>
+          </div>
+        </Visibility>
+        
+        <Visibility context = {this.contextRef} onBottomPassed = {this.showMenuBar} once={false}></Visibility>
         <header className="App-header">
-          
           <Router>
           <div>
             <nav>
@@ -132,33 +178,9 @@ class App extends React.Component {
             <Route path="/users/" component={Users} />
           </div>
         </Router>
-        <Visibility context = {this.contextRef} onBottomPassed = {this.showMenuBar} once={false}>
-
-        </Visibility>
         </header>
         <h1>test</h1>
-        {/* <Transition visible={this.state.visible} animation='scale' duration={500}>
-          <Segment inverted id = 'menubar'>
-            <Menu color={"pink"} widths={4}  size='large'>
-              <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
-              <Menu.Item
-                name='messages'
-                active={activeItem === 'messages'}
-                onClick={this.handleItemClick}
-              />
-              <Menu.Item
-                name='friends'
-                active={activeItem === 'friends'}
-                onClick={this.handleItemClick}
-              />
-              <Menu.Item
-              name='login'
-              active={activeItem === 'login'}
-              onClick={this.handleItemClick}
-            />
-            </Menu>
-          </Segment>
-        </Transition> */}
+
         
       </div>
     );

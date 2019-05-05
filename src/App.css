@@ -36,9 +36,43 @@
 .top-menu-bar{
   margin: 0px;
 }
-#menubar {
-  background-color: #a0d2ff;
-  width: 100%;
-  position: sticky;
-  top:0px;
+.overview {
+  /* background-image: url("img.jpg"); */
+  background-image: linear-gradient(to right, #a0d2ff , pink);
+  z-index: -100;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* filter: blur(16px);
+  -webkit-filter: blur(16px); */
+  height: 1000px;
+  
+}
+.overview-content{
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+.overview-hearts{
+
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 90%;
+  /* left: 70%; */
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  text-align: center;
 }
