@@ -56,7 +56,7 @@
   font-size: 600%;
   /* border: 1px solid #f1f1f1; */
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -70,7 +70,7 @@
   color: #ff6b83;
   font-weight: bold;
   position: absolute;
-  top: 120%;
+  top: 125%;
   font-size: 1000%;
   left: 50%;
   transform: translate(-50%, -50%);
