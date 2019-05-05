@@ -38,7 +38,7 @@
 }
 .overview {
   /* background-image: url("img.jpg"); */
-  background-image: linear-gradient(to right, #a0d2ff , pink);
+  background-image: linear-gradient(to right, #a0d2ff , #ffc0cb);
   z-index: -100;
   background-position: center;
   background-repeat: no-repeat;
@@ -49,11 +49,12 @@
   
 }
 .overview-content{
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  /* background-color: rgb(0,0,0); /* Fallback color */
+  /* background-color: rgba(0,0,0, 0.2); Black w/opacity/see-through */ 
   color: white;
   font-weight: bold;
-  border: 3px solid #f1f1f1;
+  font-size: 600%;
+  /* border: 1px solid #f1f1f1; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -66,11 +67,12 @@
 
 .overview-hearts{
 
-  color: white;
+  color: #ff6b83;
   font-weight: bold;
   position: absolute;
-  top: 90%;
-  /* left: 70%; */
+  top: 120%;
+  font-size: 1000%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
 

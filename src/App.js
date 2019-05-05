@@ -44,7 +44,7 @@ function Users() {
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.state = { activeItem: 'home', visible: false, 
+    this.state = { activeItem: 'home', visible: false, heartVisible: false,
       calculations: {
       direction: 'none',
       height: 0,
@@ -65,11 +65,22 @@ class App extends React.Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
   handleUpdate = (e, { calculations }) => {
     this.setState({ calculations }); 
-    var elem = document.getElementById("overview-hearts");
-    elem.style.left = (this.state.calculations.pixelsPassed*1.2).toString() + "px"; 
-    var elem = document.getElementById("overview-hearts2");
-    elem.style.left = (this.state.calculations.width-this.state.calculations.pixelsPassed*1.2).toString() + "px";
-    // console.log(this.state.calculations.pixelsPassed.toString(), "px")
+    var elem1 = document.getElementById("overview-hearts");
+    var elem2 = document.getElementById("overview-hearts2");
+    if (this.state.calculations.width-this.state.calculations.pixelsPassed*2.4>-1 && elem1.hidden === false){
+      elem1.style.left = (this.state.calculations.pixelsPassed*1.2).toString() + "px"; 
+      elem1.style.color = "#63b6ff";
+      elem2.style.left = (this.state.calculations.width-this.state.calculations.pixelsPassed*1.2).toString() + "px";
+      elem2.style.color = "#ff6b83";
+
+    } else{
+      elem1.hidden = true;
+      elem2.hidden = true;
+      this.setState({ heartVisible: true });
+    }
+    
+
+    console.log(this.state.calculations.pixelsPassed)
   }
   showMenuBar = ()=>{
     this.setState({visible: true})
@@ -144,14 +155,19 @@ class App extends React.Component {
           <div className="overview">
           </div>
           <div className="overview-content">
-            <h1>This is a love space between you and your lover</h1>
-            <h1>{calculations.pixelsPassed.toFixed()}px</h1>
+            <p>This is a love space between you and your lover</p>
+            {/* <h1>{calculations.pixelsPassed.toFixed()}px</h1> */}
           </div>
           <div className="overview-hearts" id="overview-hearts">
             <Icon name="heart outline"/>
           </div>
           <div className="overview-hearts" id="overview-hearts2">
             <Icon name="heart outline"/>
+          </div>
+          <div className="overview-hearts" id="overview-hearts3">
+            <Transition animation={'tada'} duration={500} visible={this.state.heartVisible}><Icon name="heart"/>
+            </Transition>
+            
           </div>
         </Visibility>
         
