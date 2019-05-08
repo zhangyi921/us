@@ -104,7 +104,7 @@ class Chat extends React.Component{
                         <Button size="mini" content='Game' icon='chess'/>        
                     </Segment>
                     <Form reply>
-                    <input placeholder='First Name' />
+                    <input placeholder='Say someting' />
                     <Button content='Send' labelPosition='right' icon='send' basic color='blue' style={{marginTop:15}}/>
                     </Form>
                 </Comment.Group>
