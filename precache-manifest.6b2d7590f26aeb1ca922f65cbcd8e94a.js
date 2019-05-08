@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7cbd2389255de1846366a8717f64022c",
+    "revision": "e02d1996a9c0859b0089a81cd86087da",
     "url": "/us/index.html"
   },
   {
-    "revision": "a49184fe4763682ea6b7",
+    "revision": "56fd76bb69d795fbb44f",
     "url": "/us/static/css/2.016f01f7.chunk.css"
   },
   {
-    "revision": "744f72c8d829466d6ee1",
-    "url": "/us/static/css/main.d3b848d1.chunk.css"
+    "revision": "4b88dcaf9c032a2c7d92",
+    "url": "/us/static/css/main.31f84a10.chunk.css"
   },
   {
-    "revision": "a49184fe4763682ea6b7",
-    "url": "/us/static/js/2.75841489.chunk.js"
+    "revision": "56fd76bb69d795fbb44f",
+    "url": "/us/static/js/2.e1a52272.chunk.js"
   },
   {
-    "revision": "744f72c8d829466d6ee1",
-    "url": "/us/static/js/main.c2ec8c78.chunk.js"
+    "revision": "4b88dcaf9c032a2c7d92",
+    "url": "/us/static/js/main.6e6fce46.chunk.js"
   },
   {
     "revision": "984dfb94c91f4fea70fb",
@@ -44,6 +44,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/us/static/media/brand-icons.e8c322de.woff2"
   },
   {
+    "revision": "432d61fd3f38f54f912047ab678cc0c4",
+    "url": "/us/static/media/elliot.432d61fd.jpg"
+  },
+  {
     "revision": "9c74e172f87984c48ddf5c8108cabe67",
     "url": "/us/static/media/flags.9c74e172.png"
   },
@@ -66,10 +70,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "faff92145777a3cbaf8e7367b4807987",
     "url": "/us/static/media/icons.faff9214.woff"
-  },
-  {
-    "revision": "0d768880866574b373b37acba9cf7629",
-    "url": "/us/static/media/kiss-wink-heart-regular.0d768880.svg"
   },
   {
     "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",
