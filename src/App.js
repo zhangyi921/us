@@ -226,12 +226,12 @@ class App extends React.Component {
           {/* Private */}
           <div className="private">
             <Grid>
-              <Grid.Column width={11}>
+              <Grid.Column width={9}>
                 <div className="overview-content">
                   <Zoom><p>Just you and your lover? Make a post only available to your lover or use love messenger. Love and private. </p></Zoom>
                 </div>
               </Grid.Column>
-              <Grid.Column width={5}>
+              <Grid.Column width={7}>
                 <Chat/>
               </Grid.Column>
             </Grid>

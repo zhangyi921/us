@@ -14,7 +14,7 @@ class Card1 extends React.Component{
     render(){
         const { activeIndex } = this.state;
         return(
-            <Segment style={{overflow: 'auto', maxHeight: 600 }}>
+            <Segment style={{overflow: 'auto', maxHeight: 600, width:300 }}>
                 <Card>
                     <Image src={matthew_img} />
                     <Card.Content>
