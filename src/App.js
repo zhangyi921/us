@@ -1,11 +1,16 @@
 import React from 'react';
 import './App.css';
+import logo from './logo.svg';
 import 'semantic-ui-css/semantic.min.css'
 import { Menu, Segment, Transition, Visibility, Button, Grid, Icon } from 'semantic-ui-react'
 import Zoom from 'react-reveal/Zoom';
+import Roll from 'react-reveal/Roll';
+import Rotate from 'react-reveal/Rotate';
+import Fade from 'react-reveal/Fade';
 import Card1 from './Card1';
 import Card2 from './Card2';
-import Chat from'./Chat';
+import Chat from './Chat';
+import Data from './Data';
 
 // this is my couple app demo
 // packages used: sematic ui, react reaveal
@@ -183,7 +188,7 @@ class App extends React.Component {
             </Grid.Column>
             <Grid.Column width={11}>
               <div className="overview-content">
-                <Zoom><p>Want to have an online home of you and your lover? You've found the right place! Start sharing everything with your lover! </p></Zoom>
+                <Fade top><p>Want to have an online home of you and your lover? You've found the right place! Start sharing everything with your lover! </p></Fade>
               </div>
             </Grid.Column>
           </Grid>
@@ -226,13 +231,13 @@ class App extends React.Component {
           {/* Love data */}
           <div className="lovedata">
             <Grid>
-              <Grid.Column width={11}>
+              <Grid.Column width={9}>
                 <div className="overview-content">
-                  <Zoom><p>All data about you guys. Never forget her birthday or even her grandfater's birthday.<span role="img" aria-label="sheep">😏</span></p></Zoom>
+                  <Rotate top left><p>All data about you guys. Never forget her birthday or even her grandfater's birthday.<span role="img" aria-label="sheep">😏</span></p></Rotate>
                 </div>
               </Grid.Column>
-              <Grid.Column width={5}>
-                  <Card1/>
+              <Grid.Column width={7}>
+                  <Data/>
               </Grid.Column>
             </Grid>
           </div>
@@ -243,11 +248,15 @@ class App extends React.Component {
           <div className="about">
             <Grid>
               <Grid.Column width={5}>
-                  <Card1/>
+                  <img src={logo} className="App-logo" alt="logo" />
               </Grid.Column>
               <Grid.Column width={11}>
                 <div className="overview-content">
-                  <Zoom><p>Want to have an online home of you and your lover? You've found the right place! Start sharing everything with your lover! </p></Zoom>
+                  <Roll left>
+                    <p>Yi Zhang's React demo.</p>
+                    <h2>Powered by Sematic UI React, React Reveal</h2>
+                    
+                  </Roll>
                 </div>
               </Grid.Column>
             </Grid>
