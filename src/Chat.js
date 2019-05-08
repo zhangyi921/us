@@ -1,7 +1,7 @@
 import React from 'react';
-import {Card, Accordion, Image, Icon, Label, Button, Comment, Form, Header, Segment } from 'semantic-ui-react';
-import matthew_img from './image/matthew.png'
-class Card1 extends React.Component{
+import {Card, Accordion, Image, Icon, Label, Button, Comment, Form, Header, Segment, List } from 'semantic-ui-react';
+import icon_img from './image/rachel.png';
+class Chat extends React.Component{
     state = { activeIndex: 1 }
 
     handleClick = (e, titleProps) => {
@@ -15,10 +15,17 @@ class Card1 extends React.Component{
         const { activeIndex } = this.state;
         return(
             <Segment style={{overflow: 'auto', maxHeight: 600 }}>
-                <Card>
-                    <Image src={matthew_img} />
+                <Card centered={false}>
+                    <Card.Content extra>
+                    <List.Item>
+                        <Image avatar src={icon_img} />
+                        <List.Content>
+                            <List.Header as='a'>Rachel</List.Header>
+                        </List.Content>
+                    </List.Item>
+                    </Card.Content>
                     <Card.Content>
-                        <Card.Header>Matthew</Card.Header>
+                        
                         <Card.Meta>
                         <span className='date'>Sunday, May 5, 2019</span>
                         </Card.Meta>
@@ -127,4 +134,4 @@ class Card1 extends React.Component{
     }
 }
 
-export default Card1;
+export default Chat;

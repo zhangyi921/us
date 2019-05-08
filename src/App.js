@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Menu, Segment, Transition, Visibility, Button, Grid, Icon, Image, Card, Accordion } from 'semantic-ui-react'
 import Zoom from 'react-reveal/Zoom';
 import Card1 from './Card1';
+import Chat from'./Chat';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 // this is my couple app demo
 // packages used: sematic ui, react reaveal
@@ -67,6 +69,7 @@ class App extends React.Component {
   componentDidMount() {
     this.elem1 = document.getElementById("h1");
     this.elem2 = document.getElementById("h2");
+    this.elem3 = document.getElementById("h3");
   }
   handleUpdate = (e, { calculations }) => {
     this.setState({ calculations }); 
@@ -82,6 +85,7 @@ class App extends React.Component {
     } else{
       this.elem1.hidden = true;
       this.elem2.hidden = true;
+      // this.elem3.style.position = "absolute";
       this.setState({ heartVisible: true });
     }
     
@@ -184,13 +188,13 @@ class App extends React.Component {
             <Zoom><p>This is a love space between you and your lover</p></Zoom>
             {/* <h1>{calculations.pixelsPassed.toFixed()}px</h1> */}
           </div>
-          <div className="home-hearts" id="h1">
+          <div className="home-hearts-blue" id="h1">
             <Zoom><Icon name="heart outline"/></Zoom>
           </div>
-          <div className="home-hearts" id="h2">
+          <div className="home-hearts-red" id="h2">
             <Zoom><Icon name="heart outline"/></Zoom>
           </div>
-          <div className="home-hearts" id="overview-hearts3">
+          <div className="home-hearts" id="h3">
             <Transition animation={'tada'} duration={1000} visible={this.state.heartVisible}><Icon name="heart"/>
             </Transition>
             
@@ -217,28 +221,28 @@ class App extends React.Component {
           {/* Private */}
           <div className="private">
             <Grid>
-              <Grid.Column width={5}>
-                  <Card1/>
-              </Grid.Column>
               <Grid.Column width={11}>
                 <div className="overview-content">
-                  <Zoom><p>Want to have an online home of you and your lover? You've found the right place! Start sharing everything with your lover! </p></Zoom>
+                  <Zoom><p>Just you and your lover? Make a post only available to your lover or use love messenger. Love and private. </p></Zoom>
                 </div>
+              </Grid.Column>
+              <Grid.Column width={5}>
+                <Chat/>
               </Grid.Column>
             </Grid>
           </div>
         </Visibility>
         
         <Visibility context = {this.contextRef} onTopPassed = {() => this.changeMenu("Public")} onBottomVisible = {() => this.changeMenu("Public")} once={false}>
-          {/* Private */}
+          {/* Public */}
           <div className="public">
             <Grid>
               <Grid.Column width={5}>
-                  <Card1/>
+                  <Chat/>
               </Grid.Column>
               <Grid.Column width={11}>
                 <div className="overview-content">
-                  <Zoom><p>Want to have an online home of you and your lover? You've found the right place! Start sharing everything with your lover! </p></Zoom>
+                  <Zoom><p>Want just you and your lover? Make a post only available to your lover or use love messanger. Love and private. </p></Zoom>
                 </div>
               </Grid.Column>
             </Grid>

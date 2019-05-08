@@ -64,13 +64,12 @@
   padding: 20px;
   text-align: center;
 }
-
 .home-hearts{
 
   color: #ff6b83;
   font-weight: bold;
   position: absolute;
-  top: 115%;
+  top: 120%;
   font-size: 1000%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -78,13 +77,38 @@
 
   text-align: center;
 }
+.home-hearts-blue{
 
+  color: #63b6ff;
+  font-weight: bold;
+  position: absolute;
+  top: 120%;
+  font-size: 1000%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  text-align: center;
+}
+.home-hearts-red{
+
+  color: #ff6b83;
+  font-weight: bold;
+  position: absolute;
+  top: 120%;
+  font-size: 1000%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  text-align: center;
+}
 .overview {
   /* background-image: url("img.jpg"); */
   /* background-image: linear-gradient(to right, #a0d2ff , #ffc0cb); */
   background-color: #a0d2ff;
   padding: 100px;
-  padding-top: 200px;
+  padding-top: 250px;
   border-bottom: #fdfdfd solid 1px;
   z-index: -100;
   background-position: center;
@@ -118,7 +142,7 @@
   /* background-image: linear-gradient(to right, #a0d2ff , #ffc0cb); */
   background-color: #ffc0cb;
   padding: 100px;
-  padding-top: 200px;
+  padding-top: 250px;
   border-bottom: #fdfdfd solid 1px;
   z-index: -100;
   background-position: center;
@@ -134,7 +158,7 @@
   /* background-image: linear-gradient(to right, #a0d2ff , #ffc0cb); */
   background-color: #a0d2ff;
   padding: 100px;
-  padding-top: 200px;
+  padding-top: 250px;
   border-bottom: #fdfdfd solid 1px;
   z-index: -100;
   background-position: center;
@@ -151,7 +175,7 @@
   /* background-image: linear-gradient(to right, #a0d2ff , #ffc0cb); */
   background-color: #ffc0cb;
   padding: 100px;
-  padding-top: 200px;
+  padding-top: 250px;
   border-bottom: #fdfdfd solid 1px;
   z-index: -100;
   background-position: center;
@@ -168,7 +192,7 @@
   /* background-image: linear-gradient(to right, #a0d2ff , #ffc0cb); */
   background-color: #282c34;
   padding: 100px;
-  padding-top: 200px;
+  padding-top: 250px;
   border-bottom: #fdfdfd solid 1px;
   z-index: -100;
   background-position: center;
