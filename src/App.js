@@ -70,10 +70,15 @@ class App extends React.Component {
     this.elem1 = document.getElementById("h1");
     this.elem2 = document.getElementById("h2");
     this.elem3 = document.getElementById("h3");
+    this.showAlert = false;
   }
   handleUpdate = (e, { calculations }) => {
     this.setState({ calculations }); 
     // console.log(calculations);
+    if (this.state.calculations.width < 918 && !this.showAlert){
+      alert("please view it on a wider screen for better experience!");
+      this.showAlert = true;
+    }
     // var elem1 = document.getElementById("h1");
     // var elem2 = document.getElementById("h2");
     if (this.state.calculations.width-this.state.calculations.pixelsPassed*2.4>-1 && this.elem1.hidden === false){
