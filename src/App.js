@@ -39,7 +39,41 @@ class App extends React.Component {
     }, };
     this.contextRef = React.createRef();
   }
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, { name }) => {
+    
+    if (name === 'home'){
+      window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+    } else if (name === 'Overview'){
+      window.scrollTo({
+        top: 1100,
+        behavior: 'smooth'
+      });
+    } else if (name === 'Private'){
+      window.scrollTo({
+        top: 2100,
+        behavior: 'smooth'
+      });
+    } else if (name === 'Public'){
+      window.scrollTo({
+        top: 3100,
+        behavior: 'smooth'
+      });
+    } else if (name === 'Love Data'){
+      window.scrollTo({
+        top: 4100,
+        behavior: 'smooth'
+      });
+    } else if (name === 'About This Demo'){
+      window.scrollTo({
+        top: 5100,
+        behavior: 'smooth'
+      });
+    }
+    this.setState({ activeItem: name }); 
+  }
   componentDidMount() {
     this.elem1 = document.getElementById("h1");
     this.elem2 = document.getElementById("h2");
