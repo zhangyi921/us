@@ -1,47 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import 'semantic-ui-css/semantic.min.css'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Menu, Segment, Transition, Visibility, Button, Grid, Icon, Image, Card, Accordion } from 'semantic-ui-react'
+import { Menu, Segment, Transition, Visibility, Button, Grid, Icon } from 'semantic-ui-react'
 import Zoom from 'react-reveal/Zoom';
 import Card1 from './Card1';
+import Card2 from './Card2';
 import Chat from'./Chat';
-import { ParallaxProvider } from 'react-scroll-parallax';
 
 // this is my couple app demo
 // packages used: sematic ui, react reaveal
 // npm run predeploy
 // npm run deploy
-function Index() {
-  return (
-    <div>
-      <h2>Home</h2>
-      <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-    </div>
-  );
-}
-
-function About() {
-  console.log("this is about");
-  return <h2>About</h2>;
-}
-
-function Users() {
-  console.log("this is users");
-  return <h2>Users</h2>;
-}
 
 
 class App extends React.Component {
@@ -120,7 +89,6 @@ class App extends React.Component {
   }
   render(){
     const { activeItem } = this.state;
-    const { calculations } = this.state;
     return (
       <div className="App">
         <Segment inverted style={{margin:0, background: "#a0d2ff", padding: 0}} className="top-menu-bar">
@@ -243,11 +211,11 @@ class App extends React.Component {
           <div className="public">
             <Grid>
               <Grid.Column width={5}>
-                  <Chat/>
+                <Card2/>
               </Grid.Column>
               <Grid.Column width={11}>
                 <div className="overview-content">
-                  <Zoom><p>Want just you and your lover? Make a post only available to your lover or use love messanger. Love and private. </p></Zoom>
+                  <Zoom><p>Check out events in your city, hang out with your lover! Check out public posts, give your best wishes!</p></Zoom>
                 </div>
               </Grid.Column>
             </Grid>
@@ -255,16 +223,16 @@ class App extends React.Component {
         </Visibility>
 
         <Visibility context = {this.contextRef} onTopPassed = {() => this.changeMenu("Love Data")} onBottomVisible = {() => this.changeMenu("Love Data")} once={false}>
-          {/* Private */}
+          {/* Love data */}
           <div className="lovedata">
             <Grid>
-              <Grid.Column width={5}>
-                  <Card1/>
-              </Grid.Column>
               <Grid.Column width={11}>
                 <div className="overview-content">
-                  <Zoom><p>Want to have an online home of you and your lover? You've found the right place! Start sharing everything with your lover! </p></Zoom>
+                  <Zoom><p>All data about you guys. Never forget her birthday or even her grandfater's birthday.<span role="img" aria-label="sheep">😏</span></p></Zoom>
                 </div>
+              </Grid.Column>
+              <Grid.Column width={5}>
+                  <Card1/>
               </Grid.Column>
             </Grid>
           </div>
@@ -285,32 +253,7 @@ class App extends React.Component {
             </Grid>
           </div>
         </Visibility>
-        <header className="App-header">
-          <Router>
-          <div>
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/">Home1</Link>
-                </li>
-                <li>
-                  <Link to="/about/">About</Link>
-                </li>
-                <li>
-                  <Link to="/users/">Users</Link>
-                </li>
-              </ul>
-            </nav>
 
-            <Route path="/" exact component={Index} />
-            <Route path="/about/" component={About} />
-            <Route path="/users/" component={Users} />
-          </div>
-        </Router>
-        </header>
-        <h1>test</h1>
-
-        
       </div>
     );
   }

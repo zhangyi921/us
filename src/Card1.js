@@ -28,16 +28,12 @@ class Card1 extends React.Component{
                         </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                        <a>
                         Public likes: 22 
                         <Icon name='thumbs up outline' />
-                        </a>
                     </Card.Content>
                     <Card.Content extra>
-                        <a>
                         Likes from your lover: 
                         <Icon name='heart' style={{color:"#ff6b83"}}/>
-                        </a>
                     </Card.Content>
                     <Card.Content extra>
                         <Accordion>

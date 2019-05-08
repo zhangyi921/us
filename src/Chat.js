@@ -1,20 +1,11 @@
 import React from 'react';
-import {Input, Image, Icon, Label, Button, Comment, Form, Header, Segment, List } from 'semantic-ui-react';
+import { Image, Icon, Button, Comment, Form, Header, Segment, List } from 'semantic-ui-react';
 import icon_img from './image/rachel.png';
 import matt_img from './image/matt.jpg';
-import kiss from './image/kiss-wink-heart-regular.svg'
 class Chat extends React.Component{
     state = { activeIndex: 1 }
 
-    handleClick = (e, titleProps) => {
-    const { index } = titleProps
-    const { activeIndex } = this.state
-    const newIndex = activeIndex === index ? -1 : index
-
-    this.setState({ activeIndex: newIndex })
-  }
     render(){
-        const { activeIndex } = this.state;
 
         return(
             <Segment style={{overflow: 'auto', maxHeight: 610, width: 400 }}>
