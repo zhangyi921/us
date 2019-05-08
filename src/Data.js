@@ -1,6 +1,5 @@
 import React from 'react';
-import {Table, Image, Icon, Header, Segment, Button } from 'semantic-ui-react';
-import elliot from './image/elliot.jpg';
+import {Table, Icon, Header, Segment, Button } from 'semantic-ui-react';
 class Data extends React.Component{
 
     render(){
