@@ -207,7 +207,11 @@ class App extends React.Component {
             <Zoom><Icon name="heart outline"/></Zoom>
           </div>
           <div className="home-hearts" id="h3">
-            <Transition animation={'tada'} duration={1000} visible={this.state.heartVisible}><Icon name="heart"/>
+            <Transition animation={'tada'} duration={1000} visible={this.state.heartVisible}>
+              <div>
+                <p>US</p>
+                <Icon name="heart"/>
+              </div>
             </Transition>
             
           </div>
