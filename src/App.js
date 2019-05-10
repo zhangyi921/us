@@ -293,7 +293,7 @@ class App extends React.Component {
                   <Roll left>
                     <p>Yi Zhang's React demo.</p>
                     <h2>Powered by Sematic UI React, React Reveal</h2>
-                    
+                    <a style={{fontSize:30}} href="https://github.com/zhangyi921/us">GitHub Repository</a>
                   </Roll>
                 </div>
               </Grid.Column>
