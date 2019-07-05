@@ -1,4 +1,4 @@
-## This project was a React demo of mine
+## This project was a React demo of homepage
 
 UI is powered by Sematic UI React, Animation is powered by React Reveal
 
