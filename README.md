@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## This project was a React demo of mine
+
+UI is powered by Sematic UI React, Animation is powered by React Reveal
+
+## [Click here to view it](https://zhangyi921.github.io/us/)
 
 ## Available Scripts
 
